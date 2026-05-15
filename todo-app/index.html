@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 My To-Do List</h1>
+            <p>Stay organized and productive</p>
+        </header>
+
+        <!-- Statistics Dashboard -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-label">Total Tasks</span>
+                <span class="stat-value" id="totalTasks">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value" id="completedTasks">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Remaining</span>
+                <span class="stat-value" id="remainingTasks">0</span>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Add a new task..." 
+                    autofocus
+                >
+                <button id="addBtn" class="add-btn">+ Add Task</button>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+        <main class="main-content">
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">📭</div>
+                <p>No tasks yet. Add one to get started!</p>
+            </div>
+            <ul id="taskList" class="task-list"></ul>
+        </main>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="clearCompletedBtn" class="action-btn clear-btn">Clear Completed</button>
+            <button id="deleteAllBtn" class="action-btn delete-all-btn">Delete All</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
